@@ -1,0 +1,65 @@
+body 
+{
+	margin:0;
+}
+/*Menu bar*/
+#myNavbar
+{
+font-size: 1.6em;
+color:#fff;
+font-family: 'Helvetica Neue Light', 'Helvetica Neue', Helvetica;
+}
+
+/*Hover on menu */
+.nav > li > a:hover{
+    background-color:#1A438A;
+    color: #fff;
+}
+.nav > li > a:active{
+    background-color:#1A438A;
+    color: #fff;
+}
+/*Active class for the menu */
+.active a
+{
+	background-color:#1A438A;
+    color: #fff;
+}
+
+/*Freeze the screen*/
+.freezeScreen 
+  {
+    width: 100%;
+    height:100%;
+    position:absolute;
+    z-index:2;
+    display:block;
+    left:0;
+    background: rgba(255,255,255,0.8);    
+  }
+.freezeDiv
+{
+    margin:0 auto; position:relative; z-index: 0; top: 40%; left: 35%;
+}
+/*Rotate the cog*/
+.glyphicon-animate {
+-animation: spin 3s infinite linear;
+-webkit-animation: spin2 3s infinite linear;
+}
+@-webkit-keyframes spin2 {
+from { -webkit-transform: rotate(0deg);}
+to { -webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+from { transform: scale(1) rotate(0deg);}
+to { transform: scale(1) rotate(360deg);}
+}
+footer {
+    position:fixed;
+    left:0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    background: #E6E6E6;
+    margin:0px;
+}

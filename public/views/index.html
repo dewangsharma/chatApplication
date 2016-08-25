@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<base href="/">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="fragment" content="!">
+		
+		<title>Chat Application</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<script src="libs/jquery-2.1.4.min.js"></script>  <!-- JQuery Reference -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"> <!-- bootstrap css -->
+		<script src="libs/bootstrap/js/bootstrap.js"></script>   <!-- bootstrap js -->
+		<script src="libs/angular/angular.min.js"></script>    <!-- angular -->
+		<script src="libs/angular/angular-route.min.js"></script>  <!-- angular-route -->
+		<link rel="stylesheet" href="libs/slabStyle.css">  <!-- Custom css -->
+		<!-- USER MODULE -->
+		<script src="modules/users/UserCtrl.js"></script>
+		<script src="modules/users/UserService.js"></script>
+		<!-- CHAT MODULE -->
+		<script src="modules/chat/ChatCtrl.js"></script>
+		<script src="modules/chat/ChatService.js"></script>
+		
+		<!-- ANGULAR CUSTOM -->
+		<script src="js/appRoutes.js"></script>
+		<script src="js/app.js"></script>
+		
+	</head>
+	<body ng-app="commute">
+		<!-- DYNAMIC CONTENT -->
+		<div class="container" style="position:relative;overflow:hidden;min-height:900px;padding-bottom:100px">
+			<!-- DYNAMIC RESPONSE -->
+			<div ng-view></div>
+		</div>
+	</body>
+</html>

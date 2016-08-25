@@ -1,0 +1,50 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io.connect({
+    'force new connection': true
+});
+socket.on('connect', function() {
+    console.log('connected to the server');
+});
+socket.on('chat', function(data){
+	addParagragh(data);
+});
+
+socket.on('disconnect', function() {
+    console.log('disconnect data');
+    location.reload(); //reload the page if not able to reach
+});
+
+function addParagragh(data) {
+    
+    var p = '<p>' + data.username + ': ' + data.message + '</p>';
+    var t = "#chatLog";
+    $(p).insertAfter(t);
+};
+</script>
+
+
+<div ng-controller="ChatController as chatCtrl">
+<h1>
+{{tagline}}
+</h1>
+
+ <form id="chat_form" ng-submit="send()">
+        <div class="form-group">
+            <input required id="email_block" type="text" name="email" placeholder="Email Address" ng-model="currentUser.username" class="form-control">
+        </div>
+        <div class="form-group">
+            <!-- <input type="text" required id="message_block" name="message" placeholder="Message" ng-model="message" class="form-control"> -->
+            <textarea rows="4" cols="50" ng-model="message">
+			</textarea>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+        
+    </form>
+
+    <div id="chatLog">
+    </div>
+
+</div>	

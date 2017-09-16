@@ -1,3 +1,5 @@
+// i am change in the app branch1
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -46,16 +48,10 @@ function emitMessage(req,res,next){
   res.send('done');
 }
 
-
-
-
 /* Send File*/
 app.get('*', function(req, res, next) {
     res.sendfile('./public/views/index.html');
 });
-
-
-
 
 
 // development error handler
